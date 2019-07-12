@@ -15,12 +15,10 @@ class FaceTracker: NSObject,AVCaptureVideoDataOutputSampleBufferDelegate {
     
     var videoOutput = AVCaptureVideoDataOutput()
     var view:UIView
-    var layer:CALayer
     private var findface : (_ arr:Array<CGRect>) -> Void
-    required init(view:UIView, layer: CALayer, findface: @escaping (_ arr:Array<CGRect>) -> Void)
+    required init(view:UIView, findface: @escaping (_ arr:Array<CGRect>) -> Void)
     {
         self.view=view
-        self.layer = layer
         self.findface = findface
         super.init()
         self.initialize()
@@ -58,7 +56,6 @@ class FaceTracker: NSObject,AVCaptureVideoDataOutputSampleBufferDelegate {
         videoLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
         
         self.view.layer.addSublayer(videoLayer)
-        self.view.layer.addSublayer(layer)
         
         //カメラ向き
         for connection in self.videoOutput.connections {

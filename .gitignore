@@ -81,7 +81,14 @@ fabric.properties
 # *.ipr
 
 # Sonarlint plugin
-.idea/sonarlint
+.idea/**/sonarlint/
+
+# SonarQube Plugin
+.idea/**/sonarIssues.xml
+
+# Markdown Navigator plugin
+.idea/**/markdown-navigator.xml
+.idea/**/markdown-navigator/
 
 ### Swift ###
 # Xcode
@@ -124,6 +131,8 @@ playground.xcworkspace
 # Package.pins
 # Package.resolved
 .build/
+# Add this line if you want to avoid checking in Xcode SPM integration.
+# .swiftpm/xcode
 
 # CocoaPods
 # We recommend against adding the Pods directory to your .gitignore. However
